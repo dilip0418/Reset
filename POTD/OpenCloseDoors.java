@@ -13,6 +13,9 @@ The answer should be given in a form of a binary string where ‘0’ represents
 import java.util.Arrays;
 
 public class OpenCloseDoors {
+
+    // Time Complexity : O(n^2)
+    // Space Complexity : O(n)
     public static String doorStatus(int n) {
         // Write your code here.
         char[] doors = new char[n];
@@ -31,7 +34,27 @@ public class OpenCloseDoors {
         return new String(doors);
     }
 
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    private static String doorStatusOptimised(int n) {
+        StringBuilder doorSts = new StringBuilder();
+
+        for (int i = 1; i <= n; i++) {
+            int temp = (int) Math.sqrt(i);
+
+            if (temp * temp == i) {
+                doorSts.append("1");
+            } else {
+                doorSts.append("0");
+            }
+        }
+
+        return new String(doorSts);
+
+    }
+
     public static void main(String[] args) {
-        System.out.println(doorStatus(2));
+        // System.out.println(doorStatus(2));
+        System.out.println(doorStatusOptimised(4));
     }
 }
