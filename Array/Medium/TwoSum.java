@@ -27,7 +27,10 @@ public class TwoSum {
                 + Arrays.toString(twoSumOptimalUsingMap(nums, target)));
 
         // Variant 2 where we have to confirm the existence of a pair forming the sum
-        boolean containsPair = twoSumOptimalUsingHashSet(nums, target);
+        // boolean containsPair = twoSumOptimalUsingHashSet(nums, target);
+
+        boolean containsPair = twoSumOptimalUsingTwoPointers(nums, target); // In this approach we can just confirm the
+                                                                            // existence we cannot return the indexes
         if (containsPair) {
             System.out.println("YES");
         } else {
@@ -86,4 +89,25 @@ public class TwoSum {
         return false;
     }
 
+    /*
+     * Using two pointers Use this only when the interviewer asks not to use any
+     * additional space
+     */
+    private static boolean twoSumOptimalUsingTwoPointers(int[] nums, int target) {
+
+        // Sort the array --> O(nlogn)
+        Arrays.sort(nums);
+        int l = 0, r = nums.length - 1;
+        while (l < r) {
+            int sum = nums[l] + nums[r];
+            if (sum == target) {
+                return true;
+            } else if (sum < target) {
+                l++;
+            } else {
+                r--;
+            }
+        }
+        return false;
+    }
 }
