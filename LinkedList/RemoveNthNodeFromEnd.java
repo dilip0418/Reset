@@ -28,21 +28,26 @@ public class RemoveNthNodeFromEnd {
     }
 
     private static ListNode removeNthNodeFromEnd(ListNode head, int n) {
-        ListNode slow = head, fast = head;
-        ListNode prev = head;
-        int posi = 1;
-        while (posi < n) {
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+        int pos = 0;
+        // Move the fast pointer to point to the n-1 node from the first
+        while (pos < n) {
             fast = fast.next;
-            posi++;
+            pos++;
         }
 
+        // Move the fast pointer to the end of the list
         while (fast.next != null) {
-            slow = slow.next;
             fast = fast.next;
-            System.out.println(slow.val);
+            slow = slow.next;
         }
-        prev.next = slow.next;
-        return head;
+
+        // Remove the node
+        slow.next = slow.next.next;
+        return dummy.next;
     }
 
     public static void main(String[] args) {

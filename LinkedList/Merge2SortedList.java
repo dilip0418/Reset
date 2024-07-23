@@ -27,21 +27,21 @@ public class Merge2SortedList {
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
         ListNode dummy = new ListNode(0);
         ListNode current = dummy;
-        while(list1 != null && list2 != null){
-            if(list1.val < list2.val){
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
                 current.next = list1;
                 list1 = list1.next;
-            }else{
+            } else {
                 current.next = list2;
                 list2 = list2.next;
             }
             current = current.next;
         }
 
-        if(list1 != null){
+        if (list1 != null) {
             current.next = list1;
         }
-        if(list2!= null){
+        if (list2 != null) {
             current.next = list2;
         }
         return dummy.next;
@@ -57,6 +57,7 @@ public class Merge2SortedList {
     }
 
     public static void main(String[] args) {
+
         // Test Case 1
         ListNode list1 = createLinkedList(new int[] { 1, 3, 5 });
         ListNode list2 = createLinkedList(new int[] { 2, 4, 6 });

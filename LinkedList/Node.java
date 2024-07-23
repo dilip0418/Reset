@@ -23,7 +23,5 @@ public class Node {
             }
         }
         return newNode;
-    }
-
-    
+    }    
 }

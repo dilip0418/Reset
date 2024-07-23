@@ -25,7 +25,6 @@ public class RemoveDuplicates {
     }
 
     public static ListNode removeDuplicates(ListNode llist) {
-        // Write your code here
         ListNode curr = llist;
         while (curr != null && curr.next != null) {
             if (curr.val == curr.next.val) {
@@ -48,7 +47,6 @@ public class RemoveDuplicates {
     }
 
     public static ListNode deleteMiddle(ListNode head) {
-        // Write your code here.
         if (head == null || head.next == null)
             return new ListNode(-1);
         ListNode prev = null;
@@ -62,16 +60,17 @@ public class RemoveDuplicates {
         }
 
         prev.next = t.next;
-        
 
         return head;
     }
 
     public static void main(String[] args) {
-        // ListNode list1 = createLinkedList(new int[] { 3, 3, 4, 5, 5 });
-        ListNode list1 = createLinkedList(new int[] { 1, 2, 3, 4, 5 });
+        ListNode list1 = createLinkedList(new int[] { 3, 3, 4, 5, 5 });
+        // ListNode list1 = createLinkedList(new int[] { 1, 2, 3, 4, 5 });
 
-        // printList(removeDuplicates(list1));
+        System.out.println("Duplicates removed:");
+        printList(removeDuplicates(list1));
+        System.out.println("Middle element removed:");
         printList(deleteMiddle(list1));
     }
 }

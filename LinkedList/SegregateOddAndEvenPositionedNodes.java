@@ -11,14 +11,17 @@ public class SegregateOddAndEvenPositionedNodes {
     }
 
     private static ListNode segregateOddAndEvenPositionedNodes(ListNode head) {
+        // check the case where there is only one node or empty list
         if (head == null || head.next == null)
             return head;
 
-        ListNode odd = head;
+        // use node to traverse and rearrange the nodes
         ListNode evenHead = head.next;
+        ListNode odd = head;
 
         ListNode even = evenHead;
 
+        // as the even node is forward iterate until it or it's next node is null
         while (even != null && even.next != null) {
             odd.next = odd.next.next;
             even.next = even.next.next;
@@ -26,6 +29,7 @@ public class SegregateOddAndEvenPositionedNodes {
             even = even.next;
         }
 
+        // finally point the last node in the odd set of nodes to evenHead
         odd.next = evenHead;
         return head;
     }
