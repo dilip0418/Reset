@@ -43,6 +43,8 @@ public class MinimumStepsToDistanceD {
         int steps = 0, totalDistanceCovered = 0;
 
         while (totalDistanceCovered < d || (totalDistanceCovered - d) % 2 != 0) {
+            System.out.println("Steps " + steps);
+            System.out.println("Total Distance Covered " + totalDistanceCovered);
             steps += 1;
             totalDistanceCovered += steps;
         }

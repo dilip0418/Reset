@@ -47,9 +47,31 @@ public class RemoveDuplicates {
         System.out.println("Null");
     }
 
-    public static void main(String[] args) {
-        ListNode list1 = createLinkedList(new int[] { 3, 3, 4, 5, 5 });
+    public static ListNode deleteMiddle(ListNode head) {
+        // Write your code here.
+        if (head == null || head.next == null)
+            return new ListNode(-1);
+        ListNode prev = null;
+        ListNode t = head;
+        ListNode h = head;
 
-        printList(removeDuplicates(list1));
+        while (h != null && h.next != null) {
+            prev = t;
+            t = t.next;
+            h = h.next.next;
+        }
+
+        prev.next = t.next;
+        
+
+        return head;
+    }
+
+    public static void main(String[] args) {
+        // ListNode list1 = createLinkedList(new int[] { 3, 3, 4, 5, 5 });
+        ListNode list1 = createLinkedList(new int[] { 1, 2, 3, 4, 5 });
+
+        // printList(removeDuplicates(list1));
+        printList(deleteMiddle(list1));
     }
 }
