@@ -10,6 +10,7 @@ public class SieveOfErathrones {
         System.out.println(Arrays.toString(isPrime));
     }
 
+    
     private static boolean[] getIsPrime(int n) {
         boolean[] isPrime = new boolean[n + 1];
         Arrays.fill(isPrime, true);
