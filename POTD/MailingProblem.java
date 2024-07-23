@@ -20,6 +20,7 @@ public class MailingProblem {
         // Write your code here.
         int sum = 0;
         int j = 0; // this var is to track the previous char
+
         /*
          * for every character at index i in s:
          * find the index of that char in keyboard (k)
