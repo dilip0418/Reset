@@ -4,8 +4,8 @@ public class RightRotateArrayByDPlaces {
     public static void main(String[] args) {
         int arr[] = new int[] { 1, 2, 3, 4, 5 };
         // rightRotatebyDplaces(arr, 2);
-        // leftRoateByDPlaces(arr, 2);
-        rightRotatebyDplaces(arr, 2);
+        leftRoateByDPlaces(arr, 2);
+        // rightRotatebyDplaces(arr, 2);
         for (int i : arr) {
             System.out.print(i + " ");
         }

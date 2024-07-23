@@ -3,7 +3,9 @@ package Array.Easy;
 public class MoveZeroesToEnd {
     public static void main(String[] args) {
         int[] nums = new int[] { 0, 1, 0, 3, 12 };
-        moveZeroes(nums);
+        // int[] nums = new int[] { 1, 3, 12, 0, 0 };
+        // moveZeroes(nums);
+        moveZerosOptimal(nums, nums.length);
         for (int i : nums) {
             System.out.print(i + " ");
         }
@@ -24,7 +26,7 @@ public class MoveZeroesToEnd {
          * check if the j is still -1 after loop
          * which means there are no zeros in the array
          */
-        if (nums[j] == -1)
+        if (j == -1)
             return;
 
         /*
@@ -44,4 +46,24 @@ public class MoveZeroesToEnd {
             }
         }
     }
+
+    /* 
+     * Time Complexity: O(n)
+     * Spce Complexity: O(1)
+     */
+    public static void moveZerosOptimal(int[] arr, int n) {
+        // code here
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[j] != 0) {
+                j++;
+            } else if (i > j && arr[i] != 0) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                j++;
+            }
+        }
+    }
+
 }
