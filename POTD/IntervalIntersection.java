@@ -40,14 +40,10 @@ public class IntervalIntersection {
         int T = 2;
 
         // Test case 1
-        int N1_1 = 2;
-        int N2_1 = 3;
         int[][] INTERVAL1_1 = { { 2, 8 }, { 12, 16 } };
         int[][] INTERVAL2_1 = { { 5, 9 }, { 10, 12 }, { 14, 15 } };
 
         // Test case 2
-        int N1_2 = 3;
-        int N2_2 = 0;
         int[][] INTERVAL1_2 = { { 1, 2 }, { 4, 6 }, { 8, 12 } };
         int[][] INTERVAL2_2 = {};
 
